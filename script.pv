@@ -12,8 +12,10 @@ def quote_size(length):
         return 24
     elif length < 800:
         return 20
+    elif length < 1200:
+        return 14
     else:
-        return 16
+        return 12
         
 FONTS = ['Apple Chancery', 'Avenir', 'Courier New', 'Chalkduster', 'Georgia', 'Papyrus']
 BGS = ['black', 'white']
