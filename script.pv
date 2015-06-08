@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# encoding: utf-8
+from plotdevice import *
+
+quotes = read("quotes.json")
+quotes = quotes[0:10]
+
+def quote_size(length):
+    if length < 100:
+        return 36
+    elif length < 400:
+        return 24
+    elif length < 800:
+        return 20
+    else:
+        return 16
+
+with export("img/quote.png") as img:
+    size(800, 600)
+    background(0)
+    stroke(None)
+    
+    for i in range(len(quotes)):
+        with img.frame:
+            quote = quotes[i]
+            font_size = quote_size(len(quote))
+            print(len(quote), quote[0:10])
+            stylesheet('w', 'Baskerville', 'bold', font_size)
+            fill('white')
+            styled_quote = u'<w>{0}</w>'.format(quote)
+            text(styled_quote, 100, 100, 600, 400, outline=False, plot=True)
+            #pth.fit(100, 100, 600, 400, stretch=False)
