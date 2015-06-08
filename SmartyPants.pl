@@ -91,9 +91,9 @@ else {
 			'3',
 		);
 		if ($cli_opts{'version'}) {		# Version info
-			print "\nThis is Markdown, version $VERSION.\n";
-			print "Copyright 2004 John Gruber\n";
-			print "http://daringfireball.net/projects/markdown/\n";
+			print " \n\nThis is Markdown, version $VERSION. \n\n";
+			print "Copyright 2004 John Gruber \n\n";
+			print "http://daringfireball.net/projects/markdown/ \n\n";
 			exit 0;
 		}
 		if ($cli_opts{'shortversion'}) {		# Just the version number string.
@@ -475,7 +475,7 @@ sub EducateQuotes {
     # Special case for decade abbreviations (the '80s):
     s/'(?=\d{2}s)/&#8217;/g;
 
-    my $close_class = qr![^\ \t\r\n\[\{\(\-]!;
+    my $close_class = qr![^\ \t\r \n\n\[\{\(\-]!;
     my $dec_dashes = qr/&#8211;|&#8212;/;
 
     # Get most opening single quotes:
